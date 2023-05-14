@@ -1,9 +1,10 @@
 class Stadium:
     __instance = None
-
+    
     def __str__(self):
-        print(f"Stadium( name={self.__name}, capacity={self.__capacity}, "
-              f"{self.__current_attendance}, home_team={self.__home_team}, away_team={self.__away_team})")
+    return f"Stadium(name={self.__name}, capacity={self.__capacity}, " \
+           f"current_attendance={self.__current_attendance}, home_team={self.__home_team}, " \
+           f"away_team={self.__away_team})"
 
     def __init__(self, name=None, capacity=0, current_attendance=0, home_team=None, away_team=None):
         self.__name = name
@@ -81,4 +82,5 @@ stadiums = [Stadium(),
             ('Silmash', 10000, 45, "Lviv red team", "Blue team"),
             Stadium.get_instance(),
             Stadium.get_instance()]
-print(stadiums)
+for item in stadiums:
+    print(item)
