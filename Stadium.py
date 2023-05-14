@@ -1,10 +1,10 @@
 class Stadium:
     __instance = None
-    
+
     def __str__(self):
-    return f"Stadium(name={self.__name}, capacity={self.__capacity}, " \
-           f"current_attendance={self.__current_attendance}, home_team={self.__home_team}, " \
-           f"away_team={self.__away_team})"
+        return f"Stadium(name={self.__name}, capacity={self.__capacity}, " \
+               f"current_attendance={self.__current_attendance}, home_team={self.__home_team}, " \
+               f"away_team={self.__away_team})"
 
     def __init__(self, name=None, capacity=0, current_attendance=0, home_team=None, away_team=None):
         self.__name = name
@@ -26,7 +26,7 @@ class Stadium:
         return self.__home_team
 
     @home_team.setter
-    def capacity(self, home_team):
+    def home_team(self, home_team):
         self.__home_team = home_team
 
     @property
@@ -69,7 +69,7 @@ class Stadium:
         if self.__current_attendance - 100 < 0:
             return print('There are not so many visitors')
         else:
-            self.__current_attendance - 100
+            self.__current_attendance -= 100
 
     def change_home_team(self, new_home_team):
         self.__home_team = new_home_team
@@ -79,7 +79,7 @@ class Stadium:
 
 
 stadiums = [Stadium(),
-            ('Silmash', 10000, 45, "Lviv red team", "Blue team"),
+            Stadium('Silmash', 10000, 45, "Lviv red team", "Blue team"),
             Stadium.get_instance(),
             Stadium.get_instance()]
 for item in stadiums:
