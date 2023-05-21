@@ -7,6 +7,9 @@ from lab8.models.SwimmingPool import SwimmingPool
 class StadiumManager:
 
     def __init__(self):
+        """
+        Initializes a StadiumManager object.
+        """
         self.stadiums = []
 
     def add_stadium(self, stadium):
