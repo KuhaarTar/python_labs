@@ -5,6 +5,9 @@ from lab8.models.SwimmingPool import SwimmingPool
 
 
 class StadiumManager:
+    """
+    This is class to manage stadiums
+    """
 
     def __init__(self):
         """
@@ -28,22 +31,23 @@ class StadiumManager:
         print(self.stadiums)
 
     def find_all_with_capacity_greater_than(self, capacity):
-            """
-            Знаходить усі спортивні комплекси з місткістю більше заданого значення.
+        """
+        Знаходить усі спортивні комплекси з місткістю більше заданого значення.
 
-            :param capacity: Значення місткості для порівняння.
-            :return: Список спортивних комплексів.
-            """
-            return list(filter(lambda s: s.capacity >= capacity, self.stadiums))
+        :param capacity: Значення місткості для порівняння.
+        :return: Список спортивних комплексів.
+        """
+        return list(filter(lambda s: s.capacity >= capacity, self.stadiums))
 
     def find_all_by_name(self, name):
-            """
-            Знаходить усі спортивні комплекси з заданою назвою.
+        """
+        Знаходить усі спортивні комплекси з заданою назвою.
 
-            :param name: Назва спортивних комплексів для пошуку.
-            :return: Список спортивних комплексів.
-            """
-            return list(filter(lambda s: s.name == name, self.stadiums))
+        :param name: Назва спортивних комплексів для пошуку.
+        :return: Список спортивних комплексів.
+        """
+        return list(filter(lambda s: s.name == name, self.stadiums))
+
 
 if __name__ == "__main__":
     stadium_manager = StadiumManager()

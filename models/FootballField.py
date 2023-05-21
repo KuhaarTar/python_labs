@@ -2,6 +2,9 @@ from lab8.models.AbstractStadium import AbstractStadium
 
 
 class FootballField(AbstractStadium):
+    """
+    Class that describe FootballField
+    """
 
     def __init__(self, name, capacity, current_attendance, length, width, type_field_coverage):
         """

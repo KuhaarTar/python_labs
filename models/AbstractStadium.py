@@ -77,7 +77,6 @@ class AbstractStadium(ABC):
         """
         :return: Returns a list of sports that can be contested at this sports complex
         """
-        pass
 
     def add_attends(self, count):
         """

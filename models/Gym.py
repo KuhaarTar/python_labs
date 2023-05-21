@@ -2,6 +2,10 @@ from lab8.models.AbstractStadium import AbstractStadium
 
 
 class Gym(AbstractStadium):
+
+    """
+    Class to describe Gym
+    """
     def __init__(self, name, capacity, current_attendance, count_of_simulator, monthly_subscription_fee, count_of_coach):
         """
         Initializes a Gym object.
