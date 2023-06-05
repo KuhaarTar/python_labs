@@ -4,7 +4,7 @@ import abstract class
 from abc import ABC, abstractmethod
 
 from lab8.decorators.decorators import exception_logging
-from lab8.exception.exceptions import NotEnoughSeatsException
+from lab8.exception.exceptions import NotEnoughSeatsException, NotEnoughVisitorsException
 
 
 class AbstractStadium(ABC):
@@ -104,20 +104,21 @@ class AbstractStadium(ABC):
         :param count:
         :return:
         """
-        if self.__current_attendance + count > self.__capacity:
+        if self.current_attendance + count > self.__capacity:
             raise NotEnoughSeatsException()
         else:
-            self.__current_attendance += count
+            self.current_attendance += count
 
     def get_attributes_by_type(self, data_type):
         return {key: value for key, value in self.__dict__.items() if isinstance(value, data_type)}
 
+    @exception_logging(NotEnoughVisitorsException, mode="file")
     def decrease_attendance(self):
         """
         method decrease attendance by 100
         :return:
         """
-        if self.__current_attendance - 100 < 0:
-            print('There are not so many visitors')
+        if self.current_attendance - 100 < 0:
+            raise NotEnoughVisitorsException()
         else:
-            self.__current_attendance -= 100
+            self.current_attendance -= 100
